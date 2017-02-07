@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>funBreak</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- Normalize/reset -->
+		<link rel="stylesheet" href="assets/css/reset.css">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<!-- jQuery Library-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+		<!-- Bootstrap JS -->
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		
+		<!-- External css -->
+		<link rel="stylesheet" href="assets/css/style.css">
+
+		<!-- Firebase -->
+		<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+	</head>
+	<body>
+		<div class="container">
+
+			<!-- Jumbotron -->
+			<div class="jumbotron" id="main">
+				<div class="text-center" id="timeBox">00:00</div>
+					<div class="text-center" id="buttons">
+						<button id="start">Start</button>
+						<button id="stop">Stop</button>
+						<button id="reset">Reset</button>
+					</div>
+			</div>
+		<div class="row">
+		  	<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+			    
+			<!-- Modal content-->
+					<div class="modal-content">
+				    	<div class="modal-header">
+					    	<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<div class="form-group col-md-5">
+								<input type="text" class="form-control" id="studentName" placeholder="What's your name?">
+							</div>
+							</div>
+						<div class="modal-body">
+					
+					<div class="panel-body .col-md-6">
+						<form role="form" id="search-form">
+
+							<div class="form-group col-md-5">
+								<input type="text" class="form-control" id="trackName" placeholder="Type a Track Name"/>
+							</div>
+						    	<button type="submit" class="btn btn-default" id="sendForm">Send data to firebase</button>
+						    	<button type="submit" class="btn btn-default" id="apiCall">Find me that Track</button>
+ 					    </form>					
+					</div>
+
+						<!-- Song Results flow in this -->
+					    <div id="songSearchResults"></div>
+
+						</div>
+						<div class="modal-footer">
+					    	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Dynamic Nav Tabs -->
+  			<ul class="nav nav-tabs">
+    			<li><a data-toggle="tab" href="#menu1">Music Requests</a></li>
+    			<li><a data-toggle="tab" href="#menu2">Fun Facts</a></li>
+    			<li><a data-toggle="tab" href="#menu3">Fun Polls</a></li>
+  			</ul>
+
+  		<div class="tab-content">
+		<div id="menu1" class="tab-pane fade">
+
+			<!-- Search Result Box -->
+			<div class="col-lg-6">
+				<div class="panel panel-default .col-md-6" id="songRequest">
+  					<div class="panel-body">
+    				Song Requests
+  					</div>
+				</div>				
+			</div>
+			
+			<!-- Form to submit name and song request -->
+			<div class="col-lg-6">
+			<div class="panel panel-default">
+				<!-- Button to trigger modal -->
+	  			<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Spotify Search</button>
+				
+
+			</div>				
+			</div>
+    	</div>
+    	<div id="menu2" class="tab-pane fade"></div>
+    	<div id="menu3" class="tab-pane fade"></div>
+  		</div>
+
+		</div>
+	
+
+		</div>
+		<!-- Modal Search/Spotify -->
+		<script type="text/javascript" src="assets/js/modalSearch.js"></script>
+		
+		<!-- timerJS -->
+		<script type="text/javascript" src="assets/js/app.js"></script>
+
+
+	</body>
+</html>
+
